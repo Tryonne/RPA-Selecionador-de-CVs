@@ -20,8 +20,25 @@ def create_pdf(filename, content):
         pdf.multi_cell(0, 10, txt=section)
     pdf.output(filename)
 
-# Sample CV contents for each department
 cv_contents = {
+    "pedreiro": [
+        "Pedreiro Profissional - 10 anos de experiência",
+        "Experiência Profissional:",
+        "- Construção de alvenaria e acabamentos",
+        "- Leitura e interpretação de plantas",
+        "- Assentamento de pisos e revestimentos",
+        "- Execução de obras residenciais e comerciais",
+        "Formação: Curso Técnico em Construção Civil"
+    ],
+    "admin_geral": [
+        "Profissional Multidisciplinar",
+        "Experiência Profissional:",
+        "- Coordenação de projetos diversos",
+        "- Análise e documentação de processos",
+        "- Experiência em gestão de equipes",
+        "- Conhecimento em ferramentas administrativas",
+        "Formação: Bacharel em Administração Geral"
+    ],
     "software_engineer": [
         "Desenvolvedor Full Stack com 5 anos de experiência",
         "Experiência Profissional:",
@@ -64,17 +81,13 @@ cv_contents = {
 }
 
 def main():
-    # Create input_cvs directory if it doesn't exist
-    input_dir = Path("input_cvs")
+    input_dir = Path("bau_dos_cvs")
     input_dir.mkdir(exist_ok=True)
 
-    # Generate CVs for each department
     for role, content in cv_contents.items():
-        # Create PDF version
         pdf_filename = input_dir / f"cv_{role}.pdf"
         create_pdf(str(pdf_filename), content)
         
-        # Create DOCX version
         docx_filename = input_dir / f"cv_{role}.docx"
         create_docx(str(docx_filename), content)
 

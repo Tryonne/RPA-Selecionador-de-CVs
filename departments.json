@@ -1,0 +1,22 @@
+{
+    "Engenharia de Software": [
+        "python", "javascript", "sql", "desenvolvimento", "api", 
+        "backend", "frontend", "java", "c#", "php", "react",
+        "node", "git", "devops", "aws", "docker"
+    ],
+    "Marketing Digital": [
+        "seo", "ads", "google analytics", "instagram", "campanhas",
+        "copywriting", "social media", "marketing digital", "facebook",
+        "linkedin", "content", "inbound", "outbound"
+    ],
+    "Recursos Humanos": [
+        "recrutamento", "entrevista", "folha de pagamento", "formação",
+        "benefícios", "gestão de pessoas", "treinamento", "seleção",
+        "desenvolvimento organizacional", "cargos e salários"
+    ],
+    "Suporte Técnico": [
+        "help desk", "ticket", "atendimento", "resolução de problemas",
+        "hardware", "suporte", "service desk", "infraestrutura",
+        "manutenção", "redes", "sistemas operacionais"
+    ]
+}
