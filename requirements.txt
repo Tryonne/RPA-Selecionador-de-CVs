@@ -1,0 +1,7 @@
+spacy>=3.0.0
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+
+# Download the Portuguese language model
+# After installing requirements, run:
+# python -m spacy download pt_core_news_sm
