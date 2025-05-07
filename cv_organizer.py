@@ -3,7 +3,7 @@ import json
 import shutil
 import spacy
 import PyPDF2
-import docx
+from docx import Document
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -43,7 +43,7 @@ class CVOrganizer:
 
     def read_word(self, file_path: Path) -> str:
         try:
-            doc = docx.Document(file_path)
+            doc = Document(file_path)
             return ' '.join(paragraph.text for paragraph in doc.paragraphs)
         except Exception as error:
             print(f"Não foi possível ler o Word {file_path}: {error}")

@@ -18,5 +18,11 @@
         "help desk", "ticket", "atendimento", "resolução de problemas",
         "hardware", "suporte", "service desk", "infraestrutura",
         "manutenção", "redes", "sistemas operacionais"
+    ],
+    "Construção Civil": [
+        "engenheiro civil", "arquiteto", "construção", "obra", "projeto",
+        "autocad", "revit", "estrutural", "hidráulica", "elétrica",
+        "orçamento", "medição", "pedreiro", "mestre de obras", "segurança do trabalho",
+        "planejamento", "gestão de obras", "fiscalização"
     ]
 }
