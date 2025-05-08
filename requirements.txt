@@ -3,6 +3,9 @@ PyPDF2>=3.0.0
 python-docx>=0.8.11
 beautifulsoup4
 
+# pip install selenium
+
+
 # Download the Portuguese language model
 # After installing requirements, run:
 # python -m spacy download pt_core_news_sm
