@@ -1,9 +1,7 @@
 [
   {
     "empresa": "Desconhecida",
-    "competencias": [
-      "Middleware",
-      "TIBCO BusinessWorks"
-    ]
+    "vaga": "Data Scientist Warrior",
+    "competencias": []
   }
 ]
