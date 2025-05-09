@@ -1,10 +1,9 @@
 [
   {
     "empresa": "Desconhecida",
-    "competencias": []
-  },
-  {
-    "empresa": "Desconhecida",
-    "competencias": []
+    "competencias": [
+      "Middleware",
+      "TIBCO BusinessWorks"
+    ]
   }
 ]
