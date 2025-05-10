@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 from cv_organizer import CVOrganizer
 import json
@@ -88,6 +88,9 @@ class CVManagerGUI:
 
         refresh_btn = ttk.Button(btn_frame, text="Atualizar", command=self.refresh_lists)
         refresh_btn.pack(side=tk.LEFT, padx=5)
+
+        import_btn = ttk.Button(btn_frame, text="Importar CVs", command=self.import_cvs)
+        import_btn.pack(side=tk.LEFT, padx=5)
 
         # Configure grid weights for cv_frame
         self.cv_frame.columnconfigure(1, weight=1)
@@ -221,6 +224,20 @@ class CVManagerGUI:
         
         # Update charts
         self.update_charts(jobs)
+    
+    def import_cvs(self):
+        file_paths = filedialog.askopenfilenames(
+            title="Selecionar CV(s)",
+            filetypes=(("PDF files", "*.pdf"), ("Word files", "*.docx;*.doc"))
+        )
+        for file_path in file_paths:
+            try:
+                shutil.copy(file_path, self.input_dir)
+            except Exception as e:
+                messagebox.showerror("Erro", f"Erro ao importar o CV: {str(e)}")
+        if file_paths:
+            messagebox.showinfo("Sucesso", "CV(s) importados com sucesso!")
+            self.refresh_lists()
 
     def open_job_link(self, event):
         selection = self.jobs_tree.selection()
