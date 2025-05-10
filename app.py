@@ -15,7 +15,7 @@ class CVManagerGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Gestor de CVs")
-        self.root.geometry("800x600")
+        self.root.geometry("1500x600")
 
         # Initialize CV Organizer and job scraper
         self.input_dir = "bau_dos_cvs"
