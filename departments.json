@@ -2,27 +2,32 @@
     "Engenharia de Software": [
         "python", "javascript", "sql", "desenvolvimento", "api", 
         "backend", "frontend", "java", "c#", "php", "react",
-        "node", "git", "devops", "aws", "docker"
+        "node", "git", "devops", "aws", "docker",
+        "c++", "typescript", "scrum", "uml", "rest", "agile", "ci/cd", "linux", "testes automatizados", "microserviços"
     ],
     "Marketing Digital": [
         "seo", "ads", "google analytics", "instagram", "campanhas",
         "copywriting", "social media", "marketing digital", "facebook",
-        "linkedin", "content", "inbound", "outbound"
+        "linkedin", "content", "inbound", "outbound",
+        "email marketing", "adwords", "branding", "analytics", "influencers", "crm", "growth hacking", "wordpress", "e-commerce"
     ],
     "Recursos Humanos": [
         "recrutamento", "entrevista", "folha de pagamento", "formação",
         "benefícios", "gestão de pessoas", "treinamento", "seleção",
-        "desenvolvimento organizacional", "cargos e salários"
+        "desenvolvimento organizacional", "cargos e salários",
+        "avaliação de desempenho", "clima organizacional", "relações trabalhistas", "admissão", "demissão", "legislação trabalhista", "ponto eletrônico", "coaching", "liderança"
     ],
     "Suporte Técnico": [
         "help desk", "ticket", "atendimento", "resolução de problemas",
         "hardware", "suporte", "service desk", "infraestrutura",
-        "manutenção", "redes", "sistemas operacionais"
+        "manutenção", "redes", "sistemas operacionais",
+        "windows", "linux", "vpn", "firewall", "backup", "monitoramento", "antivírus", "cloud", "office 365", "atualização de software"
     ],
     "Construção Civil": [
         "engenheiro civil", "arquiteto", "construção", "obra", "projeto",
         "autocad", "revit", "estrutural", "hidráulica", "elétrica",
         "orçamento", "medição", "pedreiro", "mestre de obras", "segurança do trabalho",
-        "planejamento", "gestão de obras", "fiscalização"
+        "planejamento", "gestão de obras", "fiscalização",
+        "concreto", "alvenaria", "fundação", "topografia", "cronograma", "licenciamento", "normas técnicas", "CAD", "BIM"
     ]
 }
