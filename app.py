@@ -15,7 +15,7 @@ class CVManagerGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Gestor de CVs")
-        self.root.geometry("1500x600")
+        self.root.geometry("1500x600") # Previamente 800x600
 
         # Initialize CV Organizer and job scraper
         self.input_dir = "bau_dos_cvs"
@@ -92,6 +92,8 @@ class CVManagerGUI:
         import_btn = ttk.Button(btn_frame, text="Importar CVs", command=self.import_cvs)
         import_btn.pack(side=tk.LEFT, padx=5)
 
+    
+
         # Configure grid weights for cv_frame
         self.cv_frame.columnconfigure(1, weight=1)
         self.cv_frame.rowconfigure(1, weight=1)
@@ -136,6 +138,11 @@ class CVManagerGUI:
         search_btn = ttk.Button(search_frame, text="Search Jobs", 
                               command=lambda: self.search_jobs(self.dept_var.get()))
         search_btn.pack(side=tk.LEFT, padx=5)
+
+        # relatorio botao 
+        relatorio_btn = ttk.Button(search_frame, text="Gerar Relatório",
+                              command=lambda: self.gerar_relatorio(self.dept_var.get()))
+        relatorio_btn.pack(side=tk.LEFT, padx=5)
         
         # Results frame
         results_frame = ttk.Frame(left_frame, padding="5")
