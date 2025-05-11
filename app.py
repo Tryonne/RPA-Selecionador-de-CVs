@@ -10,6 +10,7 @@ import webbrowser
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
+from fpdf import FPDF
 
 class CVManagerGUI:
     def __init__(self, root):
@@ -134,6 +135,7 @@ class CVManagerGUI:
         dept_combo['values'] = list(self.cv_organizer.departments.keys())
         dept_combo.pack(side=tk.LEFT, padx=5)
         
+         
         # Search button
         search_btn = ttk.Button(search_frame, text="Search Jobs", 
                               command=lambda: self.search_jobs(self.dept_var.get()))
@@ -176,7 +178,53 @@ class CVManagerGUI:
         
         # Store jobs data
         self.jobs_data = []
+    
+    def gerar_relatorio(self, departamento):
+        if not self.jobs_data:
+            messagebox.showwarning("Aviso", "Nenhuma vaga encontrada para gerar relatório.")
+            return
+    
+        pdf = FPDF(orientation='L', unit='mm', format='A4')
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+        
+        # Adicionar título com o departamento
+        pdf.cell(0, 10, f"Relatório de Vagas - {departamento}", ln=1, align='C')
+        pdf.ln(10)
+        
+        # Cabeçalho
+        pdf.set_fill_color(200, 220, 255)
+        pdf.cell(70, 10, "Título", border=1, fill=True)
+        pdf.cell(40, 10, "Empresa", border=1, fill=True)
+        pdf.cell(40, 10, "Localização", border=1, fill=True)
+        pdf.cell(0, 10, "Breve Descrição", border=1, ln=1, fill=True)
+        
+        # Linhas das vagas
+        for job in self.jobs_data:
+            # Configurar fonte menor para caber mais conteúdo
+            pdf.set_font("Arial", size=10)
+            
+            # Título
+            pdf.cell(70, 10, str(job['title'])[:40], border=1)
+            # Empresa
+            pdf.cell(40, 10, str(job['company'])[:20], border=1)
+            # Localização
+            pdf.cell(40, 10, str(job['location'])[:20], border=1)
+            # Descrição (com quebra de linha automática)
+            desc = str(job['description'])[:100]
+            pdf.multi_cell(0, 10, desc, border=1)
+        
+        try:
+            # Nome do arquivo baseado no departamento e data
+            from datetime import datetime
+            data_atual = datetime.now().strftime("%Y%m%d_%H%M%S")
+            output_path = f"relatorio_{departamento.replace(' ', '_')}_{data_atual}.pdf"
+            pdf.output(output_path)
+            messagebox.showinfo("Sucesso", f"Relatório gerado com sucesso!\nSalvo como: {output_path}")
+        except Exception as e:
+            messagebox.showerror("Erro", f"Erro ao gerar relatório: {str(e)}")
 
+        
     def update_charts(self, jobs):
         # Clear previous charts
         self.fig_location.clear()
